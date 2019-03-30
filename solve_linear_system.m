@@ -23,4 +23,14 @@ function [solution] = solve_linear_system(A, b)
 		solution = x;
 		return;
 	endif
+	
+	% In case A is a unitary matrix
+	% Note : ' is the complex conjugate transpose operator in MATLAB or Octave
+	if (A == A')
+		for j = 1 : n
+			x(j, 1) = conj(A(j, :)) * b;
+		endfor
+		solution = x;
+		return;
+	endif
 endfunction
