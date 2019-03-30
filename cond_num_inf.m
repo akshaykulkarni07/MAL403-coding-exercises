@@ -30,4 +30,13 @@ function [condition_num] = cond_num_inf(A)
 	else
 		disp(delta);
 	endif
+	
+	% Finding infinity norm of A
+	norm_list = zeros(n, 1);
+	for i = 1 : n
+		norm_list(i, 1) = sum(abs(A(i, :)));
+	endfor
+	norm_inf = max(norm_list);
+	condition_num = norm_inf / delta;
+	return;
 endfunction
