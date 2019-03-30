@@ -33,4 +33,22 @@ function [solution] = solve_linear_system(A, b)
 		solution = x;
 		return;
 	endif
+	
+	% In case A is an upper triangular matrix
+	% Note : istriu is the function to determine whether input matrix is
+	% upper triangular
+	if (istriu(A))
+		disp('A is upper triangular');
+		x(n, 1) = b(n, 1) / A(n, n);
+		for i = n - 1 : -1 : 1
+			disp(i);
+			sum = 0;
+			for j = (i + 1) : n
+				sum += A(i, j) * x(j, 1);
+			endfor	
+			x(i, 1) = (1 / A(i, i)) * (b(i, 1) - sum);
+		endfor			
+		solution = x;
+		return;
+	endif
 endfunction
