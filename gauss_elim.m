@@ -13,7 +13,9 @@ function [solution] = gauss_elim(A, b)
 	for i = 1 : n
 		% if pivotal element is zero, then use trivial pivoting 
 		if (A(i, i) == 0)
-			A, b = trivial_pivoting(A, b, i);
+			out = trivial_pivoting(A, b, i);
+			A = out(:, 1 : n);
+			b = out(:, n + 1);
 		endif	
 		
 		% define row multipliers

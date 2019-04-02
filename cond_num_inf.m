@@ -5,7 +5,7 @@ function [condition_num] = cond_num_inf(A)
 	%%% Inputs : 
 	%%% A = matrix of size (n, n)
 	%%% Outputs : 
-	%%% condition_num = Esimated upper bound for the Condition Number of matrix A
+	%%% condition_num = Estimated upper bound for the Condition Number of matrix A
 	%%% or a string 'Not calculated' if matrix is not diagonally dominant.
 	
 	n = size(A)(1);
@@ -28,7 +28,7 @@ function [condition_num] = cond_num_inf(A)
 		condition_num = 'Not calculated';
 		return;
 	else
-		disp(delta);
+		delta
 	endif
 	
 	% Finding infinity norm of A

@@ -1,5 +1,8 @@
 function [out] = trivial_pivoting(A, b, i)
 	
+	%%% Function to perform trivial pivoting on input matrix A
+	%%% and vector b (of linear system Ax = b) for row 'i'
+	
 	out = [A, b];
 	% Check if trivial pivoting is actually needed
 	if (A(i, i) ~= 0)
