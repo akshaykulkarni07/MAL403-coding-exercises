@@ -18,9 +18,9 @@ function [out] = trivial_pivoting(A, b, i)
 			temp = A(j, :);
 			A(j, :) = A(i, :);
 			A(i, :) = temp;
-			temp1 =  b(j, 1);
-			b(j, 1) = b(i, 1);
-			b(i, 1) = temp1;
+			temp1 =  b(j, :);
+			b(j, :) = b(i, :);
+			b(i, :) = temp1;
 			out = [A, b];
 			return;
 		endif
