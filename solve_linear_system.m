@@ -46,7 +46,6 @@ function [solution] = solve_linear_system(A, b)
 		x(n, 1) = b(n, 1) / A(n, n);
 		% backward sweep through all other variables to get remaining solution
 		for i = n - 1 : -1 : 1
-			disp(i);
 			sum = 0;
 			for j = (i + 1) : n
 				sum += A(i, j) * x(j, 1);
