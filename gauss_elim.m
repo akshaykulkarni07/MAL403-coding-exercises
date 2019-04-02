@@ -1,4 +1,4 @@
-function [solution] = gauss_elim(A, b)
+function [solution] = gauss_elim(A, b, pivoting = 'partial')
 	
 	% Avoiding invalid dimensions case
 	if (size(A)(1) ~= size(b)(1))
@@ -12,8 +12,12 @@ function [solution] = gauss_elim(A, b)
 	
 	for i = 1 : n
 		% if pivotal element is zero, then use trivial pivoting 
-		if (A(i, i) == 0)
+		if (A(i, i) == 0 && pivoting == 'trivial')
 			out = trivial_pivoting(A, b, i);
+			A = out(:, 1 : n);
+			b = out(:, n + 1);
+		elseif (pivoting == 'partial')
+			out = partial_pivoting(A, b, i);
 			A = out(:, 1 : n);
 			b = out(:, n + 1);
 		endif	

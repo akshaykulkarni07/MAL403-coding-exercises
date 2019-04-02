@@ -10,13 +10,22 @@ function [out] = partial_pivoting(A, b, i)
 		return;
 	endif
 	
+	n = size(A)(1);
+	
 	% find the index of maximum value in 'i'th column
-	[_, idx] = max(abs(A(:, i)));
+	[_, idx] = max(abs(A(i : n, i)));
+	% since we only compared the rows below current row,
+	% the index needs to be compensated to be used with 
+	% complete matrix
+	idx += (i - 1);
 	
 	% swap the 2 rows in A and b i.e. in out
-	temp = out(i, :);
-	out(i, :) = out(idx, :);
-	out(idx, :) = temp;
-	
+	% but once again (redundantly) check whether idx is more than 'i'
+	% i.e. check if row is lower than current row
+	if (idx > i)
+		temp = out(i, :);
+		out(i, :) = out(idx, :);
+		out(idx, :) = temp;
+	endif
 	return;
 endfunction
