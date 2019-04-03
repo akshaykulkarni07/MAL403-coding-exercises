@@ -9,7 +9,6 @@ function [solution] = gauss_elim(A, b, pivoting = 'partial')
 	
 	n = size(A)(1);
 	x = zeros(n, 1);
-	
 	for i = 1 : n
 		% if pivotal element is zero, then use trivial pivoting 
 		if (A(i, i) == 0 && pivoting == 'trivial')
