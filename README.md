@@ -11,8 +11,8 @@ The questions of the assignment are as follows:
 6. Write a program to find solution of the linear system Ax = b using Gauss-Jordan elimination.
 7. Write a program to find inverse of non-singular matrix using Gauss-Jordan elimination.
 8. Write a progam to decompose non-singular matrix A as product LU of lower and upper triangular matrices L and U respectively.
-	1. With assumption ![equation](http://www.sciweavers.org/tex2img.php?eq=L_%7Bii%7D%20%3D%201&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0) (Dolittle’s method)
-	2. With assumption ![equation](http://www.sciweavers.org/tex2img.php?eq=U_%7Bii%7D%20%3D%201&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0) (Crout's method)
+	1. using Dolittle's method
+	2. using Crout's method
 9. Find approximation of L2 Norm of A, where A is a lower triangular matrix using heuristic method
 10. Find approximation of L2 Norm of inverse of A, where A is a lower triangular matrix using heuristic method
 11. Find approximation of condition number of A w.r.t. L2 Norm, where A is a lower triangular matrix using heuristic method
